@@ -1,0 +1,324 @@
+body, html {
+    height: 100vh;
+    background-color: rgb(45, 51, 67);
+}
+
+header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main {
+    display: none;
+    background-color:whitesmoke;
+    border: 2px solid gray;
+    border-radius: 20px;
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 0 0.5vw 0.1px gray;
+}
+
+#logo-div {
+    background-color: lavender;
+    box-shadow: 0 0 2vw 5px lavender;
+
+    font-size: 7vw; /****this is the one****/
+
+    border-radius: 20px;
+    margin: auto;
+    padding: 1vh 2vw;
+    width: 20vw;
+    
+    min-height: 50px;
+    min-width: 50px;
+
+    /* Center the elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-div h1 {
+    color: slategray;
+    font-size: 2.5vw;
+    padding: 0;
+
+    /*width: fit-content; /*******/
+
+    animation: fadeOut 2s forwards; /* Add animation to fade out */
+}
+
+
+#main-button {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    width: fit-content;
+    color: slategrey;
+}
+
+#main-button:hover {
+    color: violet;
+    transition: all 250ms ease-in;
+}
+
+#main-button:not(:hover) {
+    color: slategrey;
+    transition: all 250ms ease-in;
+}
+
+#grocery-cost input, #food-name-div input, #submit-button {
+    align-self: center;
+}
+
+#submit-button button {
+    background-color: lightgreen;
+    border: transparent;
+    border-radius: 20%;
+}
+
+#submit-button i {
+    font-size: 1.75vw;
+}
+
+
+#shopping-cart-container {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack child elements vertically */
+    height: 100%; /* Make the container fill the entire height of the viewport */
+}
+
+#item-creator {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+}
+
+#footer {
+    height: 10%; /* Set the initial height of each div to 15% of the container */
+}
+
+#cart-column {
+    background-color: lightgray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: scroll;
+    flex: 1; /* Allow cart-column to grow and fill remaining space vertically */
+}
+
+#food-name-div input, #timeframe-div input, #grocery-cost input {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+#food-name-div, #timeframe-div, #grocery-cost {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.icon-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+    background-color: #ddd;
+}
+
+#food-type label {
+    background-color: transparent;
+    width: 2.25vw;
+    height: 4vh;
+
+    border: 1px solid lightgray;
+
+    min-width: none;
+    min-height: none;
+
+    margin: 0 0.25vw;
+    transition: background-color 0.5s ease; /* Change the duration as needed */
+}
+
+#food-type label:hover {
+    background-color:lightskyblue;
+}
+
+#food-type label.selected {
+    background-color: lightskyblue;
+}
+
+#food-type p, #food-name-div label, #grocery-cost label {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: gray;
+    margin: 0;
+    text-align: center;
+    /*font-size: 1.25vw;*/
+}
+
+#food-buttons i {
+    font-size: inherit;
+    pointer-events: none;
+}
+
+#food-type, #food-name-div, #timeframe-div, #grocery-cost {
+    margin: 0.25vw;
+    padding: 0.5vw;
+}
+
+#food-name-div input {
+    width: 15vw;
+}
+
+#grocery-cost input {
+    width: 10vw;
+}
+
+#food-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Hide the default radio button */
+#food-type input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#total {
+    background-color: lightgreen;
+    border-radius: 20px;
+    padding: 0.65vw;
+}
+
+#refresh-groceries-button button, #edit-groceries-button button, #save-groceries-button button {
+    background-color: lightgreen;
+    padding: 0.25vw;
+    border: transparent;
+    border-radius: 20px;
+}
+
+.grocery {
+    border-radius: 20px;
+    padding: 1.25vh 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.25vh 0;
+    width: 95%;
+}
+
+.grocery div, .grocery button {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.grocery .type {
+    width: 5%;
+}
+
+.grocery .name {
+    width: 60%;
+}
+
+.grocery .price {
+    width: fit-content;
+    padding: 0 0.5vw;
+}
+
+.grocery .trash {
+    width: 5%;
+}
+
+#grocery-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+}
+
+#grocery-buttons i {
+    font-size: 1.25vw;
+    padding: 0.25vw;
+}
+
+.col-icon {
+    display: flex; 
+    justify-content: center; 
+    font-size: 2.5vw;
+}
+
+.type {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: transparent; 
+}
+
+.name { 
+    display: flex;
+    align-items: center; 
+    padding: 0 1vw;
+    color: gray;
+}
+
+.price, .trash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grocery h1, .grocery i {
+    font-size: 2vw;
+}
+
+#footer span, #footer i {
+    font-size: 1vw;
+}
+
+.trash {
+    color: salmon;
+    border: transparent;
+}
+
+.h1 {
+    color: gray;
+}
+
+.disabled-button {
+  pointer-events: none;
+}

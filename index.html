@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link type="text/css" rel="stylesheet" href="./styling/styles.css">
+    <title>Grocery List</title>
+</head>
+<body>
+
+    <header>
+        <div id="logo-div">
+            <h1>Grocery List</h1>
+            <button id="main-button"><i class="fa-solid fa-carrot align-self-center"></i></button>
+            <h1>API</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div id="shopping-cart-container">
+
+            <!--Grocery Creator-->
+            <form id="item-creator" method="post" action="">
+
+                <!--Grocery Type Specifying Section-->
+                <div id="food-type">
+                    <p>What type of grocery is it?</p>
+
+                    <div id="food-buttons">
+                        <label for="carb" class="icon-button">
+                            <input required type="radio" id="carb" name="type" value="Carbohydrate">
+                            <i class="fa-solid fa-wheat-awn" style="color:rgb(222, 184, 135);"></i>
+                        </label>
+                        <label for="veg" class="icon-button">
+                            <input required type="radio" id="veg" name="type" value="Vegetable">
+                            <i class="fa-solid fa-seedling" style="color: rgb(0, 128, 0);"></i>
+                        </label>
+                        <label for="fruit" class="icon-button">
+                            <input required type="radio" id="fruit" name="type" value="Fruit">
+                            <i class="fa-solid fa-apple-whole" style="color:rgb(165, 42, 42)"></i>
+                        </label>
+                        <label for="meat" class="icon-button">
+                            <input required type="radio" id="meat" name="type" value="Meat">
+                            <i class="fa-solid fa-drumstick-bite" style="color: rgb(210, 105, 30);"></i>
+                        </label>
+                        <label for="fish" class="icon-button">
+                            <input required type="radio" id="fish" name="type" value="Fish">
+                            <i class="fa-solid fa-fish" style="color:rgb(70, 130, 180);"></i>
+                        </label>
+                    </div>
+                    
+                </div>
+
+                <!--Grocery Name-->
+                <div id="food-name-div">
+                    <label for="food-name">What is the name of your grocery?</label>
+                    <input required type="text" id="name" name="name" placeholder="Lettuce">
+                </div>
+
+                <!--Grocery Cost-->
+                <div id="grocery-cost">
+                    <label for="currency-field">How much does this grocery cost?</label>
+                    <input required type="text" name="price" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$12.99">
+                </div>
+
+                <!--Create Grocery-->
+                <div id="submit-button">
+                    <button type="submit">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+
+            </form>
+
+            <!--Grocery Column-->
+            <div id="cart-column">
+
+                <!--
+                <div id="1" class="grocery">
+
+                    <button class="type">
+                        <i class="col-icon fa-solid fa-fish" style="color:steelblue;"></i>
+                    </button>
+
+                    <div class="name">
+                        <h1>
+                            Lettuce
+                        </h1>
+                    </div>
+
+                    <div class="price" style="display: flex; align-items: center; justify-content: center;">
+                        <h1 style=" width: fit-content; color: gray;">
+                            $100
+                        </h1>
+                    </div>
+
+                    
+                    <button class="trash">
+                        <i class="col-icon fa-solid fa-recycle"></i>
+                    </button>
+
+                </div>
+                -->
+            
+            </div>
+                
+
+
+                <!--Grocery Total and etc.-->
+                <div id="footer">
+
+                    <!--Grocery Buttons-->
+                    <div id="grocery-buttons">
+
+                        <div id="refresh-groceries-button">
+                            <button>
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                            </button>
+                        </div>
+
+                        <!--Edit Groceries Button-->
+                        <div id="edit-groceries-button">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        </div>
+
+                        <!--Save Groceries Button-->
+                        <div id="save-groceries-button" style="display: none;">
+                            <button>
+                                <i class="fa-regular fa-floppy-disk"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!--Grocery Paragraph-->
+                    <span>All groceries created are saved and posted to an API.</span>
+
+                    <!--Total Display-->
+                    <div id="total">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Total: </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script src="./handlers/animation-handler.js"></script>
+
+</body>
+</html>
