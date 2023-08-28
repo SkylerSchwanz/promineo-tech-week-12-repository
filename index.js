@@ -18,7 +18,7 @@ function calculateTotal() {
     const foodPrice = parseFloat(foodPriceStr);
     total += foodPrice;
   });
-  return total; /*.toFixed(2); // Round to 2 decimal places for dollars and cents*/
+  return total;
 }
 
 function updateTotal() {
